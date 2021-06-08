@@ -20,9 +20,8 @@ type Game struct {
 
 func (g *Game) init() {
 	fontModel := &common.Font{}
-	spriteModel := &sprites.Sprites{}
 	fontModel.Init()
-	spriteModel.Init()
+	sprites.Init()
 }
 
 func (g *Game) Update() error {
