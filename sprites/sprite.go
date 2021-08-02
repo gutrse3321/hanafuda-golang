@@ -55,6 +55,7 @@ func NewSprites() [constant.CountFuda]*Card {
 		cards[count] = &Card{
 			texture: fudaItem,
 			Tag:     constant.TagFuda[count],
+			ID:      uint8(count),
 		}
 
 		x++
@@ -72,6 +73,7 @@ type Card struct {
 	ty      float64
 	Angle   int
 	Tag     string
+	ID      uint8
 }
 
 func (c *Card) Translate(tx, ty float64) {
@@ -88,7 +90,7 @@ func (c *Card) Click() {
 		fx := float64(x)
 		fy := float64(y)
 		if c.tx <= fx && fx < c.tx+float64(constant.Wfuda) && c.ty <= fy && fy < c.ty+float64(constant.Hfuda) {
-			fmt.Println(c.Tag)
+			fmt.Println(c.Tag, ", ", c.ID)
 		}
 	}
 }
