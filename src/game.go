@@ -9,29 +9,30 @@ import (
 	"image/color"
 )
 
-var (
-	titleScene   = &scenes.Title{}
-	contentScene = &scenes.Content{}
-	overScene    = &scenes.Over{}
-)
-
 type Game struct {
+	titleScene   *scenes.Title
+	contentScene *scenes.Content
+	overScene    *scenes.Over
 }
 
 func (g *Game) init() {
 	fontModel := &common.Font{}
 	fontModel.Init()
 	sprites.Init()
+
+	g.titleScene = &scenes.Title{}
+	g.contentScene = scenes.NewContent()
+	g.overScene = &scenes.Over{}
 }
 
 func (g *Game) Update() error {
 	switch constant.GameMode {
 	case constant.ModeTitle:
-		titleScene.Update()
+		g.titleScene.Update()
 	case constant.ModeGame:
-		contentScene.Update()
+		g.contentScene.Update()
 	case constant.ModeGameOver:
-		overScene.Update()
+		g.overScene.Update()
 	}
 	return nil
 }
@@ -41,11 +42,11 @@ func (g *Game) Draw(screen *ebiten.Image) {
 
 	switch constant.GameMode {
 	case constant.ModeTitle:
-		titleScene.Draw(screen)
+		g.titleScene.Draw(screen)
 	case constant.ModeGame:
-		contentScene.Draw(screen)
+		g.contentScene.Draw(screen)
 	case constant.ModeGameOver:
-		overScene.Draw(screen)
+		g.overScene.Draw(screen)
 	}
 }
 

@@ -9,13 +9,21 @@ const (
 )
 
 var (
-	TagFuda = [CountFuda]string{
-		"jan_0", "jan_1", "jan_2", "jan_3", "feb_0", "feb_1", "feb_2", "feb_3", "mar_0", "mar_1",
-		"mar_2", "mar_3", "apr_0", "apr_1", "apr_2", "apr_3", "may_0", "may_1", "may_2", "may_3",
-		"jun_0", "jun_1", "jun_2", "jun_3", "jul_0", "jul_1", "jul_2", "jul_3", "aug_0", "aug_1",
-		"aug_2", "aug_3", "sep_0", "sep_1", "sep_2", "sep_3", "oct_0", "oct_1", "oct_2", "oct_3",
-		"nov_0", "nov_1", "nov_2", "nov_3", "dec_0", "dec_1", "dec_2", "dec_3", "black_0", "focus_0",
+	TagFuda = [CountFuda]int{
+		10, 11, 12, 13,
+		20, 21, 22, 23,
+		30, 31, 32, 33,
+		40, 41, 42, 43,
+		50, 51, 52, 53,
+		60, 61, 62, 63,
+		70, 71, 72, 73,
+		80, 81, 82, 83,
+		90, 91, 92, 93,
+		100, 101, 102, 103,
+		110, 111, 112, 113,
+		120, 121, 122, 123,
+		0, 1,
 	}
-	TagFudaBlack = "black_0"
-	TagFudaFocus = "focus_0"
+	TagFudaBlack = 0
+	TagFudaFocus = 1
 )

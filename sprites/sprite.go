@@ -71,7 +71,7 @@ type Card struct {
 	tx      float64
 	ty      float64
 	Angle   int
-	Tag     string
+	Tag     int
 }
 
 func (c *Card) Translate(tx, ty float64) {

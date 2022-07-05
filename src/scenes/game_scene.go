@@ -11,11 +11,15 @@ type Content struct {
 	cards [50]*sprites.Card
 }
 
+// NewContent init cards sprites
+func NewContent() *Content {
+	return &Content{
+		cards: sprites.NewSprites(),
+	}
+}
+
 func (t *Content) Draw(screen *ebiten.Image) {
 	//text.Draw(screen, "Welcome Gamers！", common.FontObject.FontHuakang, constant.ScreenWidth/2-(5*12), constant.ScreenHeight/2-12, color.White)
-
-	t.cards = sprites.NewSprites()
-
 	//TODO test sprite
 	i := 0
 	x := float64(0)

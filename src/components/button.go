@@ -84,9 +84,6 @@ func (b *Button) draw(screen *ebiten.Image) {
 	text.Draw(screen, b.Title, b.titleFont, int(b.tx)+b.Width/2/2, int(b.ty)+b.titleFontHeight+b.titleFontHeight/2, b.btnSkin.TitleColor)
 }
 
-func (b *Button) update() {
-}
-
 func (b *Button) selectBtnSize() {
 	switch b.Size {
 	case "small":
